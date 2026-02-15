@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbeat Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .heartbeat {
+            width: 100px;
+            height: 100px;
+            background-color: #ff3d00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 20%, 100% {
+                transform: scale(1);
+            }
+            10% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heartbeat">
+        💖
+    </div>
+    <script>
+        setInterval(() => {
+            const heart = document.querySelector('.heartbeat');
+            heart.style.transform = heart.style.transform === 'scale(1)' ? 'scale(1.1)' : 'scale(1)';
+        }, 1000);
+    </script>
+</body>
+</html>
